@@ -1,0 +1,122 @@
+:root {
+    --green: rgb(147, 214, 138);
+    --blue: rgb(100, 180, 255);
+    --dark-blue: rgb(83, 146, 206);
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif, Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(45deg, var(--green), var(--blue));
+    /*background: var(--green);*/
+    font-size: large;
+    overflow-x: hidden;
+}
+
+p, h2{
+    text-align: center;
+    color: white;
+}
+h1 {
+    font-style: italic;
+}
+header {
+    text-align: center;
+    color: white;
+}
+main {
+    max-width: 900px;
+    margin: auto;
+}
+footer {
+    font-size: medium;
+}
+footer > p {
+    text-align: center;
+}
+a:link {
+    color: white;
+    text-decoration: underline;
+}
+a:visited {
+    color: var(--dark-blue)
+}
+
+.content-row {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-row > p {
+    width: 50%;
+    color: white;
+    text-align: left;
+    margin: 1rem;
+}
+.content-row > a { 
+    width: 50%; 
+}
+.content-row > a > img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 0 black;
+}
+#image-right {
+    animation: slideLeft 2s ease;
+}
+#image-left {
+    animation: slideRight 2s ease;
+}
+
+.content-row-header {
+    background-color: var(--blue);
+    border-radius: 20px;
+    padding: 0.1em;
+}
+.footer-row-header {
+    background-color: var(--blue);
+    padding: 0.1em;
+}
+.footer-content {
+    max-width: 900px;
+    margin: auto;
+}
+.footer-content > p {
+    text-align: left;
+    padding-left: 1em;
+}
+
+@keyframes slideLeft {
+    0%{
+        transform: translateX(50vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slideRight {
+    0%{
+        transform: translateX(-50vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .content-row {
+        flex-direction: column;
+    }
+    .content-row > p {
+        width: 80%;
+    }
+    .content-row > img {
+        width: 80%;
+    }
+    .content-row > a {
+        width: 80%;
+    }
+}
